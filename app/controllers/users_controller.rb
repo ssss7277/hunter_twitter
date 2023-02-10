@@ -8,9 +8,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      flash[:notice] = "ユーザー登録が完了しました"
       redirect_to home_path
     else
-      render :new
+      flash[:alert] = "入力内容に誤りがあります"
+      redirect_to action: :new
     end
   end
 

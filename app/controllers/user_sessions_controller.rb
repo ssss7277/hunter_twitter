@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
     @user = login(params[:email], params[:password])
     if @user
       flash[:notice] = "ログインしました"
-      redirect_to root_path
+      redirect_to home_path
     else
       flash[:alert] = "メールアドレス,またはパスワードが間違っています。"
       redirect_to action: :new
