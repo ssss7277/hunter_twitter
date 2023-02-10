@@ -16,34 +16,20 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.7.0".freeze)
   s.requirements = ["none".freeze]
-  s.rubygems_version = "3.3.11".freeze
+  s.rubygems_version = "3.4.3".freeze
   s.summary = "Email composition and delivery framework (part of Rails).".freeze
 
-  s.installed_by_version = "3.3.11" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.4.3" if s.respond_to? :installed_by_version
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 4
-  end
+  s.specification_version = 4
 
-  if s.respond_to? :add_runtime_dependency then
-    s.add_runtime_dependency(%q<activesupport>.freeze, ["= 7.0.4"])
-    s.add_runtime_dependency(%q<actionpack>.freeze, ["= 7.0.4"])
-    s.add_runtime_dependency(%q<actionview>.freeze, ["= 7.0.4"])
-    s.add_runtime_dependency(%q<activejob>.freeze, ["= 7.0.4"])
-    s.add_runtime_dependency(%q<mail>.freeze, ["~> 2.5", ">= 2.5.4"])
-    s.add_runtime_dependency(%q<net-imap>.freeze, [">= 0"])
-    s.add_runtime_dependency(%q<net-pop>.freeze, [">= 0"])
-    s.add_runtime_dependency(%q<net-smtp>.freeze, [">= 0"])
-    s.add_runtime_dependency(%q<rails-dom-testing>.freeze, ["~> 2.0"])
-  else
-    s.add_dependency(%q<activesupport>.freeze, ["= 7.0.4"])
-    s.add_dependency(%q<actionpack>.freeze, ["= 7.0.4"])
-    s.add_dependency(%q<actionview>.freeze, ["= 7.0.4"])
-    s.add_dependency(%q<activejob>.freeze, ["= 7.0.4"])
-    s.add_dependency(%q<mail>.freeze, ["~> 2.5", ">= 2.5.4"])
-    s.add_dependency(%q<net-imap>.freeze, [">= 0"])
-    s.add_dependency(%q<net-pop>.freeze, [">= 0"])
-    s.add_dependency(%q<net-smtp>.freeze, [">= 0"])
-    s.add_dependency(%q<rails-dom-testing>.freeze, ["~> 2.0"])
-  end
+  s.add_runtime_dependency(%q<activesupport>.freeze, ["= 7.0.4"])
+  s.add_runtime_dependency(%q<actionpack>.freeze, ["= 7.0.4"])
+  s.add_runtime_dependency(%q<actionview>.freeze, ["= 7.0.4"])
+  s.add_runtime_dependency(%q<activejob>.freeze, ["= 7.0.4"])
+  s.add_runtime_dependency(%q<mail>.freeze, ["~> 2.5", ">= 2.5.4"])
+  s.add_runtime_dependency(%q<net-imap>.freeze, [">= 0"])
+  s.add_runtime_dependency(%q<net-pop>.freeze, [">= 0"])
+  s.add_runtime_dependency(%q<net-smtp>.freeze, [">= 0"])
+  s.add_runtime_dependency(%q<rails-dom-testing>.freeze, ["~> 2.0"])
 end

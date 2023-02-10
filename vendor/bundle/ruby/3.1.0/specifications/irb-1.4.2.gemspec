@@ -17,18 +17,12 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/ruby/irb".freeze
   s.licenses = ["Ruby".freeze, "BSD-2-Clause".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.5".freeze)
-  s.rubygems_version = "3.3.11".freeze
+  s.rubygems_version = "3.4.3".freeze
   s.summary = "Interactive Ruby command-line tool for REPL (Read Eval Print Loop).".freeze
 
-  s.installed_by_version = "3.3.11" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.4.3" if s.respond_to? :installed_by_version
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 4
-  end
+  s.specification_version = 4
 
-  if s.respond_to? :add_runtime_dependency then
-    s.add_runtime_dependency(%q<reline>.freeze, [">= 0.3.0"])
-  else
-    s.add_dependency(%q<reline>.freeze, [">= 0.3.0"])
-  end
+  s.add_runtime_dependency(%q<reline>.freeze, [">= 0.3.0"])
 end

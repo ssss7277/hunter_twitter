@@ -1,15 +1,18 @@
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
-/usr/local/opt/ruby/bin/ruby -I /usr/local/Cellar/ruby/3.1.2_1/lib/ruby/3.1.0 -r ./siteconf20221012-15167-twgn84.rb extconf.rb
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/Users/nishimura/.rbenv/versions/3.1.0/bin/ruby -I /Users/nishimura/.rbenv/versions/3.1.0/lib/ruby/site_ruby/3.1.0 extconf.rb
 creating Makefile
 
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
-make DESTDIR\= clean
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-zdc78w sitelibdir\=./.gem.20230210-77712-zdc78w clean
 
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
-make DESTDIR\=
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-zdc78w sitelibdir\=./.gem.20230210-77712-zdc78w
 compiling websocket_mask.c
 linking shared-object websocket_mask.bundle
 
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
-make DESTDIR\= install
-/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20221012-15167-papfe
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-zdc78w sitelibdir\=./.gem.20230210-77712-zdc78w install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20230210-77712-zdc78w
+
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-zdc78w sitelibdir\=./.gem.20230210-77712-zdc78w clean

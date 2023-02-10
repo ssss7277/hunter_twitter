@@ -1,5 +1,5 @@
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/nio4r-2.5.8/ext/nio4r
-/usr/local/opt/ruby/bin/ruby -I /usr/local/Cellar/ruby/3.1.2_1/lib/ruby/3.1.0 -r ./siteconf20221012-15167-rh354g.rb extconf.rb
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/nio4r-2.5.8/ext/nio4r
+/Users/nishimura/.rbenv/versions/3.1.0/bin/ruby -I /Users/nishimura/.rbenv/versions/3.1.0/lib/ruby/site_ruby/3.1.0 extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... no
 checking for linux/io_uring.h... no
@@ -12,11 +12,11 @@ checking for port_event_t in port.h... no
 checking for sys/resource.h... yes
 creating Makefile
 
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/nio4r-2.5.8/ext/nio4r
-make DESTDIR\= clean
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/nio4r-2.5.8/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-3dvmex sitelibdir\=./.gem.20230210-77712-3dvmex clean
 
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/nio4r-2.5.8/ext/nio4r
-make DESTDIR\=
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/nio4r-2.5.8/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-3dvmex sitelibdir\=./.gem.20230210-77712-3dvmex
 compiling bytebuffer.c
 bytebuffer.c:308:20: warning: implicit conversion loses integer precision: 'ssize_t' (aka 'long') to 'int' [-Wshorten-64-to-32]
     return INT2NUM(bytes_read);
@@ -288,12 +288,15 @@ compiling selector.c
 selector.c:301:26: warning: incompatible function pointer types passing 'VALUE (*)(VALUE *)' (aka 'unsigned long (*)(unsigned long *)') to parameter of type 'VALUE (*)(VALUE)' (aka 'unsigned long (*)(unsigned long)') [-Wincompatible-function-pointer-types]
         return rb_ensure(func, (VALUE)args, NIO_Selector_unlock, self);
                          ^~~~
-/usr/local/Cellar/ruby/3.1.2_1/include/ruby-3.1.0/ruby/internal/iterator.h:425:25: note: passing argument to parameter 'b_proc' here
+/Users/nishimura/.rbenv/versions/3.1.0/include/ruby-3.1.0/ruby/internal/iterator.h:425:25: note: passing argument to parameter 'b_proc' here
 VALUE rb_ensure(VALUE (*b_proc)(VALUE), VALUE data1, VALUE (*e_proc)(VALUE), VALUE data2);
                         ^
 1 warning generated.
 linking shared-object nio4r_ext.bundle
 
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/nio4r-2.5.8/ext/nio4r
-make DESTDIR\= install
-/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20221012-15167-ukw977
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/nio4r-2.5.8/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-3dvmex sitelibdir\=./.gem.20230210-77712-3dvmex install
+/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20230210-77712-3dvmex
+
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/nio4r-2.5.8/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-3dvmex sitelibdir\=./.gem.20230210-77712-3dvmex clean

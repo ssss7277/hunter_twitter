@@ -1,5 +1,5 @@
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/puma-5.6.5/ext/puma_http11
-/usr/local/opt/ruby/bin/ruby -I /usr/local/Cellar/ruby/3.1.2_1/lib/ruby/3.1.0 -r ./siteconf20221012-15610-2yp1tm.rb extconf.rb
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/puma-5.6.5/ext/puma_http11
+/Users/nishimura/.rbenv/versions/3.1.0/bin/ruby -I /Users/nishimura/.rbenv/versions/3.1.0/lib/ruby/site_ruby/3.1.0 extconf.rb
 checking for BIO_read() in -lcrypto... yes
 checking for SSL_CTX_new() in -lssl... yes
 checking for openssl/bio.h... yes
@@ -9,20 +9,23 @@ checking for SSL_CTX_set_min_proto_version(NULL, 0) in openssl/ssl.h... yes
 checking for X509_STORE_up_ref()... yes
 checking for SSL_CTX_set_ecdh_auto(NULL, 0) in openssl/ssl.h... yes
 checking for SSL_CTX_set_dh_auto(NULL, 0) in openssl/ssl.h... yes
-checking for SSL_get1_peer_certificate() in openssl/ssl.h... no
+checking for SSL_get1_peer_certificate() in openssl/ssl.h... yes
 checking for Random.bytes... yes
 creating Makefile
 
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/puma-5.6.5/ext/puma_http11
-make DESTDIR\= clean
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/puma-5.6.5/ext/puma_http11
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-74lfgd sitelibdir\=./.gem.20230210-77712-74lfgd clean
 
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/puma-5.6.5/ext/puma_http11
-make DESTDIR\=
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/puma-5.6.5/ext/puma_http11
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-74lfgd sitelibdir\=./.gem.20230210-77712-74lfgd
 compiling http11_parser.c
 compiling mini_ssl.c
 compiling puma_http11.c
 linking shared-object puma/puma_http11.bundle
 
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/puma-5.6.5/ext/puma_http11
-make DESTDIR\= install
-/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20221012-15610-edfjm6/puma
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/puma-5.6.5/ext/puma_http11
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-74lfgd sitelibdir\=./.gem.20230210-77712-74lfgd install
+/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20230210-77712-74lfgd/puma
+
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/puma-5.6.5/ext/puma_http11
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-74lfgd sitelibdir\=./.gem.20230210-77712-74lfgd clean

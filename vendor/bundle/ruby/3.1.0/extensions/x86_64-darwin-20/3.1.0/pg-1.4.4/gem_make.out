@@ -1,5 +1,5 @@
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/pg-1.4.4/ext
-/usr/local/opt/ruby/bin/ruby -I /usr/local/Cellar/ruby/3.1.2_1/lib/ruby/3.1.0 -r ./siteconf20221012-15610-s8x532.rb extconf.rb
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/pg-1.4.4/ext
+/Users/nishimura/.rbenv/versions/3.1.0/bin/ruby -I /Users/nishimura/.rbenv/versions/3.1.0/lib/ruby/site_ruby/3.1.0 extconf.rb
 Calling libpq with GVL unlocked
 checking for pg_config... yes
 Using config values from /usr/local/bin/pg_config
@@ -25,11 +25,11 @@ checking for C99 variable length arrays... yes
 creating extconf.h
 creating Makefile
 
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/pg-1.4.4/ext
-make DESTDIR\= clean
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/pg-1.4.4/ext
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-foybtb sitelibdir\=./.gem.20230210-77712-foybtb clean
 
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/pg-1.4.4/ext
-make DESTDIR\=
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/pg-1.4.4/ext
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-foybtb sitelibdir\=./.gem.20230210-77712-foybtb
 compiling gvl_wrappers.c
 compiling pg.c
 compiling pg_binary_decoder.c
@@ -57,7 +57,10 @@ compiling pg_type_map_in_ruby.c
 compiling pg_util.c
 linking shared-object pg_ext.bundle
 
-current directory: /Users/nishimura/workspace/runteq/hunter_typing/vendor/bundle/ruby/3.1.0/gems/pg-1.4.4/ext
-make DESTDIR\= install
-/usr/bin/install -c -m 0755 pg_ext.bundle ./.gem.20221012-15610-vcbyan
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/pg-1.4.4/ext
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-foybtb sitelibdir\=./.gem.20230210-77712-foybtb install
+/usr/bin/install -c -m 0755 pg_ext.bundle ./.gem.20230210-77712-foybtb
 installing pg_ext libraries
+
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/pg-1.4.4/ext
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-foybtb sitelibdir\=./.gem.20230210-77712-foybtb clean

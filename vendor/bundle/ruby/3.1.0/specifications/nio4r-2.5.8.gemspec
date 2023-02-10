@@ -18,20 +18,13 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/socketry/nio4r".freeze
   s.licenses = ["MIT".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.4".freeze)
-  s.rubygems_version = "3.3.11".freeze
+  s.rubygems_version = "3.4.3".freeze
   s.summary = "New IO for Ruby".freeze
 
-  s.installed_by_version = "3.3.11" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.4.3" if s.respond_to? :installed_by_version
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 4
-  end
+  s.specification_version = 4
 
-  if s.respond_to? :add_runtime_dependency then
-    s.add_development_dependency(%q<bundler>.freeze, [">= 0"])
-    s.add_development_dependency(%q<rake>.freeze, [">= 0"])
-  else
-    s.add_dependency(%q<bundler>.freeze, [">= 0"])
-    s.add_dependency(%q<rake>.freeze, [">= 0"])
-  end
+  s.add_development_dependency(%q<bundler>.freeze, [">= 0"])
+  s.add_development_dependency(%q<rake>.freeze, [">= 0"])
 end
