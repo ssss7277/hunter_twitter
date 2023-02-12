@@ -65,6 +65,9 @@ feature 'ログイン', type: :feature do
     #結果確認
     expect(current_path).to eq(login_path)
     expect(page).to have_content('メールアドレス,またはパスワードが間違っています。')
+    # ログインしないとできない操作が不可能か確認
+    visit home_path
+    expect(current_path).to eq(login_path)
   end
 
   scenario 'ログインに失敗する' do
@@ -78,5 +81,8 @@ feature 'ログイン', type: :feature do
     expect(current_path).to eq(login_path)
     expect(page).to have_content('メールアドレス,またはパスワードが間違っています。')
     expect(page).to have_field 'Email', with: @user.email
+    # ログインしないとできない操作が不可能か確認
+    visit home_path
+    expect(current_path).to eq(login_path)
   end
 end
