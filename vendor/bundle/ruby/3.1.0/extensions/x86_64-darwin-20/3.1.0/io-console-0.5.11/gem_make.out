@@ -1,0 +1,22 @@
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/io-console-0.5.11/ext/io/console
+/Users/nishimura/.rbenv/versions/3.1.0/bin/ruby -I /Users/nishimura/.rbenv/versions/3.1.0/lib/ruby/site_ruby/3.1.0 extconf.rb
+checking for termios.h... yes
+checking for cfmakeraw() in termios.h... yes
+checking for sys/ioctl.h... yes
+checking for HAVE_RUBY_FIBER_SCHEDULER_H... yes
+creating Makefile
+
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/io-console-0.5.11/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-58ln4a sitelibdir\=./.gem.20230210-77712-58ln4a clean
+
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/io-console-0.5.11/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-58ln4a sitelibdir\=./.gem.20230210-77712-58ln4a
+compiling console.c
+linking shared-object io/console.bundle
+
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/io-console-0.5.11/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-58ln4a sitelibdir\=./.gem.20230210-77712-58ln4a install
+/usr/bin/install -c -m 0755 console.bundle ./.gem.20230210-77712-58ln4a/io
+
+current directory: /Users/nishimura/workspace/runteq/hunter_twitter/vendor/bundle/ruby/3.1.0/gems/io-console-0.5.11/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20230210-77712-58ln4a sitelibdir\=./.gem.20230210-77712-58ln4a clean

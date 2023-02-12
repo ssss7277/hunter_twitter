@@ -19,18 +19,12 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT".freeze]
   s.rdoc_options = ["--title".freeze, "TZInfo".freeze, "--main".freeze, "README.md".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 1.9.3".freeze)
-  s.rubygems_version = "3.3.11".freeze
+  s.rubygems_version = "3.4.3".freeze
   s.summary = "Time Zone Library".freeze
 
-  s.installed_by_version = "3.3.11" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.4.3" if s.respond_to? :installed_by_version
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 4
-  end
+  s.specification_version = 4
 
-  if s.respond_to? :add_runtime_dependency then
-    s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["~> 1.0"])
-  else
-    s.add_dependency(%q<concurrent-ruby>.freeze, ["~> 1.0"])
-  end
+  s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["~> 1.0"])
 end
