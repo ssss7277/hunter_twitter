@@ -20,6 +20,8 @@ feature '新規登録', type: :feature do
   end
 
   scenario '新規登録が失敗する' do
+    # 入力前後でuser数に変化がないか確認
+    expect change(User, :count).from(0).to(0)
     visit login_path
     click_link '新規登録'
     expect(current_path).to eq(new_user_path)
@@ -32,6 +34,7 @@ feature '新規登録', type: :feature do
     #結果確認
     expect(current_path).to eq(new_user_path)
     expect(page).to have_content('入力内容に誤りがあります')
+    expect change(User, :count).by(0)
   end
 end
 
