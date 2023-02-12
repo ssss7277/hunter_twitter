@@ -55,7 +55,7 @@ feature 'ログイン', type: :feature do
     expect(new_user.email).to eq("test@example")
   end
 
-  scenario 'ログインに失敗する' do
+  scenario 'ログインに失敗するがemailが正しい場合保持される' do
     visit login_path
     expect(page).to have_content('ログイン')
     #ユーザー情報の入力
@@ -65,5 +65,18 @@ feature 'ログイン', type: :feature do
     #結果確認
     expect(current_path).to eq(login_path)
     expect(page).to have_content('メールアドレス,またはパスワードが間違っています。')
+  end
+
+  scenario 'ログインに失敗する' do
+    visit login_path
+    expect(page).to have_content('ログイン')
+    #ユーザー情報の入力
+    fill_in 'Email', with:  @user.email
+    fill_in 'Password', with: ""
+    click_button "ログイン"
+    #結果確認
+    expect(current_path).to eq(login_path)
+    expect(page).to have_content('メールアドレス,またはパスワードが間違っています。')
+    expect(page).to have_field 'Email', with: @user.email
   end
 end
