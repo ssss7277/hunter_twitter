@@ -34,6 +34,8 @@ feature '新規登録', type: :feature do
     #結果確認
     expect(current_path).to eq(new_user_path)
     expect(page).to have_content('入力内容に誤りがあります')
+    expect(page).to have_field 'Name', with: "test"
+    expect(page).to have_field 'Email', with: "test@example"
     expect change(User, :count).by(0)
   end
 end
@@ -62,21 +64,6 @@ feature 'ログイン', type: :feature do
     visit login_path
     expect(page).to have_content('ログイン')
     #ユーザー情報の入力
-    fill_in 'Email', with: ""
-    fill_in 'Password', with: ""
-    click_button "ログイン"
-    #結果確認
-    expect(current_path).to eq(login_path)
-    expect(page).to have_content('メールアドレス,またはパスワードが間違っています。')
-    # ログインしないとできない操作が不可能か確認
-    visit home_path
-    expect(current_path).to eq(login_path)
-  end
-
-  scenario 'ログインに失敗する' do
-    visit login_path
-    expect(page).to have_content('ログイン')
-    #ユーザー情報の入力
     fill_in 'Email', with:  @user.email
     fill_in 'Password', with: ""
     click_button "ログイン"
@@ -88,4 +75,20 @@ feature 'ログイン', type: :feature do
     visit home_path
     expect(current_path).to eq(login_path)
   end
+
+  scenario 'ログインに失敗する' do
+    visit login_path
+    expect(page).to have_content('ログイン')
+    #ユーザー情報の入力
+    fill_in 'Email', with: ""
+    fill_in 'Password', with: ""
+    click_button "ログイン"
+    #結果確認
+    expect(current_path).to eq(login_path)
+    expect(page).to have_content('メールアドレス,またはパスワードが間違っています。')
+    # ログインしないとできない操作が不可能か確認
+    visit home_path
+    expect(current_path).to eq(login_path)
+  end
+
 end
