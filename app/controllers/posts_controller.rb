@@ -12,8 +12,12 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = @current_user.id
-    @post.save
-    redirect_to posts_path
+    if @post.save
+      redirect_to posts_path
+    else
+      flash[:alert] = "1文字以上入力してください"
+      render :new
+    end
   end
 
   def show
@@ -27,9 +31,10 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to request.referer
+      redirect_to posts_path
     else
-      redirect_to new_post_path
+      flash[:notice]="1文字以上入力してください"
+      render :edit
     end
   end
 

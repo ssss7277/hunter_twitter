@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "ユーザー登録が完了しました"
       session[:user_id]=@user.id
-      redirect_to home_path
+      redirect_to posts_path
     else
       flash[:alert] = "入力内容に誤りがあります"
       render :new

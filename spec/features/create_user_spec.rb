@@ -12,7 +12,7 @@ feature '新規登録', type: :feature do
     fill_in "Password confirmation", with: "password"
     click_button "登録"
     #結果確認
-    expect(current_path).to eq(home_path)
+    expect(current_path).to eq(posts_path)
     expect(page).to have_content('ユーザー登録が完了しました')
     new_user = User.order(:id).last
     expect(new_user.name).to eq("test")
@@ -53,7 +53,7 @@ feature 'ログイン', type: :feature do
     fill_in 'Password', with: "12345678"
     click_button "ログイン"
     #結果確認
-    expect(current_path).to eq(home_path)
+    expect(current_path).to eq(posts_path)
     expect(page).to have_content('ログインしました')
     new_user = User.order(:id).last
     expect(new_user.name).to eq("test")
@@ -72,7 +72,7 @@ feature 'ログイン', type: :feature do
     expect(page).to have_content('メールアドレス,またはパスワードが間違っています。')
     expect(page).to have_field 'Email', with: @user.email
     # ログインしないとできない操作が不可能か確認
-    visit home_path
+    visit posts_path
     expect(current_path).to eq(login_path)
   end
 
@@ -87,7 +87,7 @@ feature 'ログイン', type: :feature do
     expect(current_path).to eq(login_path)
     expect(page).to have_content('メールアドレス,またはパスワードが間違っています。')
     # ログインしないとできない操作が不可能か確認
-    visit home_path
+    visit posts_path
     expect(current_path).to eq(login_path)
   end
 
