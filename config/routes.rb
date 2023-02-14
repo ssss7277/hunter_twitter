@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   get "home", to: 'users#home'
 
   resources :users, only: %i[new create]
-  resources :posts
+  resources :posts do
+    resource :favorites, only: [:create, :destroy]
+ end
 end
