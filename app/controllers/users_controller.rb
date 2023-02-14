@@ -3,8 +3,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @name = params[:name]
-    @email = params[:email]
   end
 
   def create
@@ -15,7 +13,7 @@ class UsersController < ApplicationController
       redirect_to home_path
     else
       flash[:alert] = "入力内容に誤りがあります"
-      redirect_to action: :new, params:{'name'  => params[:user][:name], 'email'  => params[:user][:email]}
+      render :new
     end
   end
 
