@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
-      flash[:alert] = "1文字以上入力してください"
+      flash[:alert] = "入力内容に誤りがあります"
       render :new
     end
   end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to posts_path
     else
-      flash[:notice]="1文字以上入力してください"
+      flash[:notice]="入力内容に誤りがあります"
       render :edit
     end
   end

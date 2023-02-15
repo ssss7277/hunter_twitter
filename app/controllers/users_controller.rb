@@ -17,6 +17,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    @posts = Post.where(user_id: params[:id])
+    # @post_favorites = Favorite.where(user_id: params[:id])
+
+    favorites = Favorite.where(user_id: @user.id).pluck(:post_id)
+    @post_favorites = Post.find(favorites)
+  end
+
   def home
   end
 

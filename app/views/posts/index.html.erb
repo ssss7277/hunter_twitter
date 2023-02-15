@@ -1,13 +1,16 @@
-<h1>posts/indexです</h1>
+<div class="hunter" >
+<h1>とうこういちらん</h1>
 <p id="alert"><%= flash[:alert]%></p>
-<%= link_to("新規投稿", "/posts/new") %>
+<%= link_to("しんきとうこう", "/posts/new") %>
+<%= link_to 'まいぺーじ', user_path(@current_user) %>
+<%= link_to 'たいとる', root_path %>
 <% @posts.each do |post| %>
   </br>
   <span><%= post.body %></span>
   <span><%= post.user_id %></span>
   <% if post.favorited?(current_user) %>
     <%= button_to post_favorites_path(post.id), method: :delete do %>
-      <span style="color:red;">❤︎</span>
+      <span style="color:red;"  class: "hunter" >❤︎</span>
     <% end %>
   <% else %>
     <%= button_to post_favorites_path(post.id), method: :post do %>
@@ -15,7 +18,8 @@
     <% end %>
   <% end %>
   <% if post.user_id == @current_user.id %>
-    <td><%= link_to("編集", "/posts/#{post.id}/edit") %></td>
-    <td><%= button_to("削除", "/posts/#{post.id}", method: :delete) %></td> 
+    <td><%= link_to("へんしゅう", "/posts/#{post.id}/edit") %></td>
+    <td><%= button_to("さくじ", "/posts/#{post.id}", { method: :delete, class: "hunter" }) %></td> 
   <% end %>
 <% end %>
+</div>
