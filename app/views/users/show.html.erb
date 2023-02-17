@@ -1,0 +1,46 @@
+<div class="hunter">
+  <h1>ゆーざーぺーじ</h1>
+  <%= "なまえ#{@user.name}" %>
+  <%= @user.id %>
+  <%= link_to 'ほーむ', posts_path %>
+
+  <h2>つぶやきいちらん</h2>
+  <% @posts.each do |post| %>
+    </br>
+    <span><%= post.body %></span>
+    <span><%= post.user_id %></span>
+    <% if post.favorited?(current_user) %>
+      <%= button_to post_favorites_path(post.id), method: :delete do %>
+        <span style="color:red;">❤︎</span>
+      <% end %>
+    <% else %>
+      <%= button_to post_favorites_path(post.id), method: :post do %>
+        <span>❤︎</span>
+      <% end %>
+    <% end %>
+    <% if post.user_id == @current_user.id %>
+      <%= link_to 'へんしゅう', edit_post_path(post.id) %>
+      <%= button_to 'さくじょ', post_path(post.id), { method: :delete, class: "hunter" } %> 
+    <% end %>
+  <% end %>
+
+  <h2>いいねいちらん</h2>
+  <% @post_favorites.each do |post| %>
+    </br>
+    <span><%= post.body %></span>
+    <span><%= post.user_id %></span>
+    <% if post.favorited?(current_user) %>
+      <%= button_to post_favorites_path(post.id), method: :delete do %>
+        <span style="color:red;">❤︎</span>
+      <% end %>
+    <% else %>
+      <%= button_to post_favorites_path(post.id), method: :post do %>
+        <span>❤︎</span>
+      <% end %>
+    <% end %>
+    <% if post.user_id == @current_user.id %>
+      <%= link_to 'へんしゅう', edit_post_path(post.id) %>
+      <%= button_to 'さくじょ', post_path(post.id), { method: :delete, class: "hunter" } %> 
+    <% end %>
+  <% end %>
+</div>

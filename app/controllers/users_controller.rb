@@ -3,8 +3,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @name = params[:name]
-    @email = params[:email]
   end
 
   def create
@@ -12,11 +10,19 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "ユーザー登録が完了しました"
       session[:user_id]=@user.id
-      redirect_to home_path
+      redirect_to posts_path
     else
       flash[:alert] = "入力内容に誤りがあります"
-      redirect_to action: :new, params:{'name'  => params[:user][:name], 'email'  => params[:user][:email]}
+      render :new
+      # redirect_to action: :new, params:{'name'  => params[:name], 'email'  => params[:email], 'password'  => params[:password]}, 'password_confirmation'  => params[:password_confirmation]
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @posts = Post.where(user_id: params[:id])
+    favorites = Favorite.where(user_id: @user.id).pluck(:post_id)
+    @post_favorites = Post.find(favorites)
   end
 
   def home

@@ -1,0 +1,26 @@
+<div class="hunter" >
+<h1>とうこういちらん</h1>
+<p id="alert" class="sherif"><%= flash[:notice]%></p>
+<p id="alert" class="sherif"><%= flash[:alert]%></p>
+<%= link_to 'しんきとうこう', new_post_path %>
+<%= link_to 'まいぺーじ', user_path(@current_user) %>
+<%= link_to 'たいとる', root_path %>
+<% @posts.each do |post| %>
+  </br>
+  <span><%= post.body %></span>
+  <span><%= post.user_id %></span>
+  <% if post.favorited?(current_user) %>
+    <%= button_to post_favorites_path(post.id), { method: :delete, id: "not_favorite" } do %>
+      <span>❤︎</span>
+    <% end %>
+  <% else %>
+    <%= button_to post_favorites_path(post.id), { method: :post, id: "not_favorite" } do %>
+      <span>♡</span>
+    <% end %>
+  <% end %>
+  <% if post.user_id == @current_user.id %>
+    <%= link_to 'へんしゅう', edit_post_path(post.id) %>
+    <%= button_to 'さくじょ', post_path(post.id), { method: :delete, class: "hunter" } %> 
+  <% end %>
+<% end %>
+</div>

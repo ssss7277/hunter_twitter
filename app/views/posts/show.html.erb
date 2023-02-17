@@ -1,0 +1,5 @@
+<%= @post.body %>
+<% if @post.user_id == @current_user.id %>
+  <%= link_to 'へんしゅう', edit_post_path(post.id) %>
+  <%= button_to 'さくじょ', post_path(post.id), { method: :delete, class: "hunter" } %> 
+<% end %>

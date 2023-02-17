@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+
+@font-face{
+  font-family: "hunter";
+  src: url('hunter.ttf') format('truetype');
+}
+
+.hunter{
+  font-family: "hunter";
+}
+
+.sherif{
+  font-family: 'sherif';
+}
