@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
 
   get "home", to: 'users#home'
+  post '/guest_login', to: 'user_sessions#guest_login'
 
   resources :users, only: %i[new create show]
   resources :posts do

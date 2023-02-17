@@ -1,7 +1,9 @@
 <div class="hunter">
   <h1>ゆーざーぺーじ</h1>
-  <%= "なまえ#{@user.name}" %>
-  <%= @user.id %>
+  <div class="sherif">
+    <%= "名前：#{@user.name}" %>
+    <%= @user.id %>
+  </div>
   <%= link_to 'ほーむ', posts_path %>
 
   <h2>つぶやきいちらん</h2>
