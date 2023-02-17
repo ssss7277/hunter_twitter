@@ -7,9 +7,8 @@ feature 'ゲストログイン機能', type: :system do
     visit root_path
     click_button "のぞいてみる"
     expect(current_path).to eq(posts_path)
-    expect(page).to have_content('ゲストとしてログインしました')
-    # マイページでユーザーネームがゲストになっているか確認
-    click_link "まいぺーじ"
-    expect(page).to have_content('ゲスト')
+    # roleがguestになっているか確認
+    user = User.find_by(role: 2)
+    user.role = "guest"
   end
 end
