@@ -14,14 +14,13 @@ class UsersController < ApplicationController
     else
       flash[:alert] = "入力内容に誤りがあります"
       render :new
+      # redirect_to action: :new, params:{'name'  => params[:name], 'email'  => params[:email], 'password'  => params[:password]}, 'password_confirmation'  => params[:password_confirmation]
     end
   end
 
   def show
     @user = User.find(params[:id])
     @posts = Post.where(user_id: params[:id])
-    # @post_favorites = Favorite.where(user_id: params[:id])
-
     favorites = Favorite.where(user_id: @user.id).pluck(:post_id)
     @post_favorites = Post.find(favorites)
   end

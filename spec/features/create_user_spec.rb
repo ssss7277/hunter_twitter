@@ -32,7 +32,7 @@ feature '新規登録', type: :feature do
     fill_in "Password confirmation", with: "aaaaaaaa"
     click_button "登録"
     #結果確認
-    expect(current_path).to eq(new_user_path)
+    expect(current_path).to eq(users_path)
     expect(page).to have_content('入力内容に誤りがあります')
     expect(page).to have_field 'Name', with: "test"
     expect(page).to have_field 'Email', with: "test@example"

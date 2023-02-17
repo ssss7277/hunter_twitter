@@ -1,6 +1,7 @@
 <div class="hunter" >
 <h1>とうこういちらん</h1>
-<p id="alert"><%= flash[:alert]%></p>
+<p id="alert" class="sherif"><%= flash[:notice]%></p>
+<p id="alert" class="sherif"><%= flash[:alert]%></p>
 <%= link_to("しんきとうこう", "/posts/new") %>
 <%= link_to 'まいぺーじ', user_path(@current_user) %>
 <%= link_to 'たいとる', root_path %>
@@ -9,12 +10,12 @@
   <span><%= post.body %></span>
   <span><%= post.user_id %></span>
   <% if post.favorited?(current_user) %>
-    <%= button_to post_favorites_path(post.id), method: :delete do %>
-      <span style="color:red;"  class: "hunter" >❤︎</span>
+    <%= button_to post_favorites_path(post.id), { method: :delete, id: "not_favorite" } do %>
+      <span>❤︎</span>
     <% end %>
   <% else %>
-    <%= button_to post_favorites_path(post.id), method: :post do %>
-      <span>❤︎</span>
+    <%= button_to post_favorites_path(post.id), { method: :post, id: "not_favorite" } do %>
+      <span>♡</span>
     <% end %>
   <% end %>
   <% if post.user_id == @current_user.id %>

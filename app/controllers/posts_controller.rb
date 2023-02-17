@@ -41,13 +41,13 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path
+    redirect_to request.referer
   end
 
   def ensure_correct_user
-    @post=Post.find_by(id: params[:id])
-    if @post.user_id != @current_user.id
-      flash[:notice]="権限がありません"
+    @post = Post.find_by(id: params[:id])
+    if @current_user.id != @post.user_id
+      flash[:notice] = "権限がありません"
       redirect_to posts_path
     end
   end
