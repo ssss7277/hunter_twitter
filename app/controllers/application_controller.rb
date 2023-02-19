@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
     @current_user = User.find_by(id: session[:user_id])
   end
 
+  def require_admin_login
+    if @current_user.role != "admin"
+      redirect_to posts_path, notice: "管理者権限がありません"
+    end
+  end
+
 private
   def not_authenticated
     redirect_to login_path, danger: "ログインしてください"

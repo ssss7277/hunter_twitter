@@ -8,8 +8,13 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      flash[:notice] = "ログインしました"
-      redirect_to posts_path
+      if @user.role == "admin"
+        flash[:notice] = "管理者としてログインしました"
+        redirect_to admin_users_path
+      else
+        flash[:notice] = "ログインしました"
+        redirect_to posts_path
+      end
     else
       flash[:alert] = "メールアドレス,またはパスワードが間違っています。"
       redirect_to action: :new, params:{'email'  => params[:email]}

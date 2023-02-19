@@ -1,0 +1,10 @@
+<h1>Admin User #edit</h1>
+<span>現在ログイン中のユーザー：<%= current_user.name %></span>
+<%= form_for(@user, url: admin_user_path(@user)) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.submit "更新する" %>
+<% end %>
+<%= button_to '削除', admin_user_path(@user.id), method: :delete %> </td>
