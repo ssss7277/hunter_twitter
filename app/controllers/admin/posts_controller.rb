@@ -1,5 +1,5 @@
 class Admin::PostsController < ApplicationController
-  before_action :admin_user
+  before_action :require_admin_login
 
   def index
     @posts = Post.all.order("created_at ASC")
@@ -25,13 +25,7 @@ class Admin::PostsController < ApplicationController
     redirect_to admin_posts_path
   end
 
-  private
-  def admin_user
-    unless current_user.role = "admin"
-    redirect_to(root_path)
-    end
-  end
-  private
+private
   def post_params
     params.require(:post).permit(:body)
   end

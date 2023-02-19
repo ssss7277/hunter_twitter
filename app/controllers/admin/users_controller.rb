@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_action :admin_user
+  before_action :require_admin_login
 
   def index
     @users = User.all.order("created_at ASC")
@@ -24,13 +24,7 @@ class Admin::UsersController < ApplicationController
     redirect_to admin_users_path
   end
 
-  private
-  def admin_user
-    unless current_user.role = "admin"
-    redirect_to(root_path)
-    end
-  end
-
+private
   def user_params
     params.require(:user).permit(:email, :name, :role)
   end
