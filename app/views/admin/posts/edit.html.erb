@@ -6,5 +6,5 @@
   <p>全角ひらがなで入力してください</p>
   <%= f.text_area :body, :placeholder =>"#{@post.body}" %>
   <%= f.submit "更新する" %>
-  <%= button_to 'さくじょ', admin_post_path(@post.id), method: :delete %> </td>
 <% end %>
+<%= button_to '削除', admin_post_path(@post.id), method: :delete %> </td>

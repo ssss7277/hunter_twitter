@@ -6,5 +6,5 @@
   <%= f.label :email %>
   <%= f.text_field :email %>
   <%= f.submit "更新する" %>
-  <%= button_to 'さくじょ', admin_user_path(@user.id), method: :delete %> </td>
 <% end %>
+<%= button_to '削除', admin_user_path(@user.id), method: :delete %> </td>
